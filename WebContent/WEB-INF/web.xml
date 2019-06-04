@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+ 
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+  </listener>
+ 
+  <servlet>
+    <servlet-name>ChangePassword</servlet-name>
+    <servlet-class>edu.utn.servlets.ChangePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePassword</servlet-name>
+    <url-pattern>/ChangePassword</url-pattern>
+  </servlet-mapping>
+       
+  <servlet>
+    <servlet-name>BestVendorProduct</servlet-name>
+    <servlet-class>edu.utn.servlets.BestVendorProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BestVendorProduct</servlet-name>
+    <url-pattern>/BestVendorProduct</url-pattern>
+  </servlet-mapping>
+      
+  <servlet>
+    <servlet-name>BestVendor</servlet-name>
+    <servlet-class>edu.utn.servlets.BestVendor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BestVendor</servlet-name>
+    <url-pattern>/BestVendor</url-pattern>
+  </servlet-mapping>
+      
+  <servlet>
+    <servlet-name>ReportComisionPremio</servlet-name>
+    <servlet-class>edu.utn.servlets.ReportComisionPremio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportComisionPremio</servlet-name>
+    <url-pattern>/ReportComisionPremio</url-pattern>
+  </servlet-mapping>
+            
+  <servlet>
+    <servlet-name>ReportComisionProduct</servlet-name>
+    <servlet-class>edu.utn.servlets.ReportComisionProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportComisionProduct</servlet-name>
+    <url-pattern>/ReportComisionProduct</url-pattern>
+  </servlet-mapping>
+      
+  <servlet>
+    <servlet-name>ReportComision</servlet-name>
+    <servlet-class>edu.utn.servlets.ReportComision</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportComision</servlet-name>
+    <url-pattern>/ReportComision</url-pattern>
+  </servlet-mapping>
+     
+  <servlet>
+    <servlet-name>ViewRulesPremios</servlet-name>
+    <servlet-class>edu.utn.servlets.ViewRulesPremios</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewRulesPremios</servlet-name>
+    <url-pattern>/ViewRulesPremios</url-pattern>
+  </servlet-mapping>
+          
+  <servlet>
+    <servlet-name>ViewRulesComisiones</servlet-name>
+    <servlet-class>edu.utn.servlets.ViewRulesComisiones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewRulesComisiones</servlet-name>
+    <url-pattern>/ViewRulesComisiones</url-pattern>
+  </servlet-mapping>
+          
+  <servlet>
+    <servlet-name>ViewProducts</servlet-name>
+    <servlet-class>edu.utn.servlets.ViewProducts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewProducts</servlet-name>
+    <url-pattern>/ViewProducts</url-pattern>
+  </servlet-mapping>
+      
+  <servlet>
+    <servlet-name>ViewUsers</servlet-name>
+    <servlet-class>edu.utn.servlets.ViewUsers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewUsers</servlet-name>
+    <url-pattern>/ViewUsers</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ViewSalesUser</servlet-name>
+    <servlet-class>edu.utn.servlets.ViewSalesUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSalesUser</servlet-name>
+    <url-pattern>/ViewSalesUser</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>EditPremio</servlet-name>
+    <servlet-class>edu.utn.servlets.EditPremio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditPremio</servlet-name>
+    <url-pattern>/EditPremio</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <servlet-name>NewPremio</servlet-name>
+    <servlet-class>edu.utn.servlets.NewPremio</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewPremio</servlet-name>
+    <url-pattern>/NewPremio</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+    <servlet-name>EditComision</servlet-name>
+    <servlet-class>edu.utn.servlets.EditComision</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditComision</servlet-name>
+    <url-pattern>/EditComision</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+    <servlet-name>NewComision</servlet-name>
+    <servlet-class>edu.utn.servlets.NewComision</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewComision</servlet-name>
+    <url-pattern>/NewComision</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>NewSale</servlet-name>
+    <servlet-class>edu.utn.servlets.NewSale</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewSale</servlet-name>
+    <url-pattern>/NewSale</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EditProduct</servlet-name>
+    <servlet-class>edu.utn.servlets.EditProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditProduct</servlet-name>
+    <url-pattern>/EditProduct</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NewProduct</servlet-name>
+    <servlet-class>edu.utn.servlets.NewProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewProduct</servlet-name>
+    <url-pattern>/NewProduct</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EditUser</servlet-name>
+    <servlet-class>edu.utn.servlets.EditUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUser</servlet-name>
+    <url-pattern>/EditUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NewUser</servlet-name>
+    <servlet-class>edu.utn.servlets.NewUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewUser</servlet-name>
+    <url-pattern>/NewUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>edu.utn.servlets.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>edu.utn.servlets.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

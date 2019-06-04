@@ -1,0 +1,14 @@
+agregar cantidad de unidades a vender en la venta -> OK
+
+reporte unificado -> OK
+
+Detalles:
+TestUnitario -> Junit -> Probar sobre la capa de servicio
+
+HQL -> OK
+
+Capa de servicio
+
+
+
+
