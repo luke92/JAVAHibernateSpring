@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/prueba</property>
+		 <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		
+		<!-- ESTO CREA LA BASE A PARTIR DE LAS ENTIDADES -->
+		<!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<mapping class="edu.utn.domain.Usuario"></mapping>
+		<mapping class="edu.utn.domain.Producto"></mapping>
+		<mapping class="edu.utn.domain.Venta"></mapping>
+		<mapping class="edu.utn.domain.Premio"></mapping>
+		<mapping class="edu.utn.domain.Comision"></mapping>
+	</session-factory>
+</hibernate-configuration>

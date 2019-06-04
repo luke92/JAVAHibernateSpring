@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+     xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
+     
+     
+	<!-- Capa de acceso a datos "Tradicional" -->
+	<!-- <bean id="dataAccessBean" class="edu.utn.dataccess.impl.DataAccessPlano"
+		scope="singleton">
+	</bean>-->
+
+	<!-- Capa de accesso a datos usando el hibernateTemplate de Spring -->
+	
+	<bean id="UsuarioDaoBean" class="edu.utn.dataccess.impl.UsuarioDaoImpl" 
+		scope="singleton"> <property name="sessionFactory" ref="sessionFactoryBean"></property> 
+		</bean>
+	
+	<bean id="ProductoDaoBean" class="edu.utn.dataccess.impl.ProductoDaoImpl" 
+		scope="singleton"> <property name="sessionFactory" ref="sessionFactoryBean"></property> 
+		</bean>
+		
+	<bean id="VentaDaoBean" class="edu.utn.dataccess.impl.VentaDaoImpl" 
+		scope="singleton"> <property name="sessionFactory" ref="sessionFactoryBean"></property> 
+		</bean>
+		
+	<bean id="ComisionDaoBean" class="edu.utn.dataccess.impl.ComisionDaoImpl" 
+		scope="singleton"> <property name="sessionFactory" ref="sessionFactoryBean"></property> 
+		</bean>
+		
+	<bean id="PremioDaoBean" class="edu.utn.dataccess.impl.PremioDaoImpl" 
+		scope="singleton"> <property name="sessionFactory" ref="sessionFactoryBean"></property> 
+		</bean>
+	
+	<bean id="dataSourceBean"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/prueba" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<!-- Session factory de Hibernate -->
+	<bean id="sessionFactoryBean"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceBean" />
+
+		<property name="annotatedClasses">
+			<list>
+				<value>edu.utn.domain.Usuario</value>
+				<value>edu.utn.domain.Producto</value>
+				<value>edu.utn.domain.Venta</value>
+				<value>edu.utn.domain.Premio</value>
+				<value>edu.utn.domain.Comision</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+ 				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		
+	</bean>
+
+	<!-- Transaction Manager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactoryBean"></property>
+	</bean>
+
+	<!-- Para que lea los metodos anotados con @Transactional -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- <bean id="UsuarioServiceBean" class="edu.utn.service.impl.UsuarioService">
+		<property name="dataAccess" ref="UsuarioDaoBean"></property>
+	</bean>
+	
+	<bean id="ProductoServiceBean" class="edu.utn.service.impl.ProductoService">
+		<property name="dataAccess" ref="ProductoDaoBean"></property>
+	</bean>
+	
+	<bean id="VentaServiceBean" class="edu.utn.service.impl.VentaService">
+		<property name="dataAccess" ref="VentaDaoBean"></property>
+	</bean> -->
+</beans>
